@@ -1,0 +1,8 @@
+flask
+flask-limiter
+termcolor
+terminaltables
+imgurpython
+pyngrok
+phonenumbers
+pyautoupdate

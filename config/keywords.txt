@@ -1,0 +1,7 @@
+number
+phone
+email
+name
+first
+surname
+address
