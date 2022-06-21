@@ -1,8 +1,9 @@
 {
     "name": "TOAST", 
     "version": "1.0", 
-    "modules":"5",
-    "serpaikey":"ac0e6821d2ef4149ae5405d06ea4b9446708213da6d179e32fd4eee072dbe3d9",
-    "imgurclientid":"c6928ac951325d5",
-    "imgursecret":"0e68dd3bdf14ea48d88ca3fd7f36d8f5cc678d64"
+    "modules":"7",
+    "setup":"False",
+    "serpaikey":"",
+    "imgurclientid":"",
+    "imgursecret":""
 }

@@ -1,1 +1,3 @@
-/__pycache__
+/__pycache_
+.gitignore
+config\configmain.json
