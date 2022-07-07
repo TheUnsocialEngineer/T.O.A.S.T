@@ -32,13 +32,10 @@ def handle(commands):
                 import modules.unscan.main as unscan
                 unscan.main()
             if module=='instastalk':
-                import modules.instastalk.main as main
+                import modules.InstaStalk.main as main
                 main(username=target)
             if module=='eyespy':
                 import modules.eyespy.main as main
-                main
-            if module=='ipgrabber':
-                import modules.ipgrabber.main as main
                 main
             if module=='phonelooker':
                 import modules.phonelooker.main as main

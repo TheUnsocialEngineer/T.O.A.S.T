@@ -1,26 +1,4 @@
 import json
-import math
-
-
-# def update():
-#     print(f'\rgetting latest version')
-#     def progress_bar(progress,total):
-#         percent=100*(progress/float(total))
-#         bar='█' * int(percent) + '-' * (100-int(percent))
-#         print(f'\r |{bar}| {percent:.2f}%"',end='\r')
-
-
-    
-#     numbers=[i*5 for i in range(1,10000)]
-#     results=[]
-#     progress_bar(0,len(numbers))
-#     for i,x in enumerate(numbers):
-#         results.append(math.factorial(x))
-#         progress_bar(i+1,len(numbers))
-
-    #git pull
-    # print(f'\rupdate complete')
-
 
 def main():
     with open('config/config.json','r+') as f:
@@ -77,15 +55,15 @@ def main():
             from commands import handle
             handle(commands)
 
-def setup():
+def startup():
     with open('config/config.json','r+') as f:
         config = json.load(f)
         setup=config.get('setup')
-        if setup=="False":
+        if setup=="False" or setup=='false':
             print("Taking Your Virginity")
             import virginity
             virginity
         else:
             main()
 
-setup()
+startup()

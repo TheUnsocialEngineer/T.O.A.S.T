@@ -6,3 +6,4 @@ imgurpython
 pyngrok
 phonenumbers
 pyautoupdate
+instaloader
