@@ -1,5 +1,5 @@
 __pycache__/
 .gitignore
 config/configmain.json
-modules/unscan
+modules\unscan
 modules/InstaStalk
