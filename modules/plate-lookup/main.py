@@ -95,22 +95,42 @@ def uk():
 
 
     
+def main():
+    print((("""
+@@#P5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555P#@@
+@P:                                                                                                                                                :P@
+@?            ?PPPPPPPPPP57.   JPPP^                .YPPP~       JPPPPPPPPPPPPP:  JPPPPPPPPPPPPP:        JPPP^     JPPP^  JPPPPPPPPPP57.            ?@
+@?            P@@@@@@@@@@@@B:  G@@@~                !@@@@G       G@@@@@@@@@@@@@^  B@@@@@@@@@@@@@^        G@@@~     G@@@~  G@@@@@@@@@@@@B.           ?@
+@?            P@@@7:^^^^5G&@~  YBGG^               .P#GGGG^      :^^^^5BGG!^^^^.  YBB&!^^^^^^^^^.        G@&B^     P@@@~  5@@@!^^^^^PBBG:           ?@
+@? .....  ..  P@@@~     !PY&!  5&BJ: ....  ....... ^YG&&&#? .....     P&##^     . P#GY.         .  ..... GGYG^ ..  P@@@~  7B@@^     5&#G: ..  ....  ?@
+@? ...... ... P@@@5?JJ7~G@P5~..G@&J:..... .........PYPGG&&&~........ .P&&#^.. ....B@@#~!J7~7?^... .......YJB@~.... P@@@^ .YY#@YJ7~7?#&@#: ... ..... ?@
+@? .......... P@@@@@@@55&#B!...G@&J:..............!@@#?:PP5?..........YGGG^.......B@@@YP@#JGB! ..........?J&@~.....G@@P:..P5J#@@BJGBGPJ!........... ?@
+@? .::::::::. P@@@Y7?!^~~^:....G@&J^.:::...::::::.GGP&!:G@BJ^.:::::...G@@@~.....:.B@@P~!?7^7?^.....:::::.PYP@!.::. 5@BJ^..5B5YJ?!^7??!:...:...:::::.!@
+@? :::::::::..JGGG^....::::::..G@&Y^...:.........!@&P555PG5GP::::::..:G@@@~:::....5GPP^... ...:::..::::::G&P5^.....G&YG!::G@&Y:.......::..:::.......?@
+@J::::::::::::P&&&!::::::::::::G@@&J!!!!!!!!!^:::G@@@BBGG#@@@!::::::::G@@@!:::::::G&@@?!!!!!!!7!^::::::::G@@@J!!!!7#@&@!::G@@@~:::::::::::::::::::::J@
+@J:^^^^^^^^^^:G@@@7:^^^^^^^^^^:G@@@@@@@@@@@@@7::7@@@G^^^^7@@@G::^^^^^:B@@@!:^^^^::B@@@@@@@@@@@@@!:^^^^^^:7&@@@@@@@@@@@G^::B@@@!:^^^^^^^^^^^^^^^^^^^:J@
+@J:^^^^^^^^^^^JPPP!^^^^^^^^^^^^JP55PPPPPPPPPP~^^?P5P!:^^^^YPP5^^^^^^^^JPP5~^^^^^^^YP55PPPPPPPPP5~^^^^^^^^:~?5PPPPPP5Y7^^^^JPP5~^^^^^^^^^^^^^^^^^^^^:J@
+@G~^^^^^^^^^^^::::^^^^^^^^^^^^^::::::::::::::^^^:::::^^^^^::::^^^^^^^^::::^^^^^^^^::::::::::::::^^^^^^^^^^^:::::::::::^^^^::::^^^^^^^^^^^^^^^^^^^^^~G@
+@@#PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP#@@
 
-countries={
-    1:"USA",
-    2:"UK",
-}
+""")))
+    countries={
+        1:"USA",
+        2:"UK",
+    }
 
-table_data = [
-            ['', 'Country',''],
-            ['', '1:USA',''],
-            ['', '2:UK',''],
-            ]
-table = AsciiTable(table_data)
-print(table.table)
-country=int(input("choose country of car: "))
-print (f"You have chosen {countries[country]}")
-if country==1:
-    usa()
-elif country==2:
-    uk()
+    table_data = [
+                ['', 'Country',''],
+                ['', '1:USA',''],
+                ['', '2:UK',''],
+                ]
+    table = AsciiTable(table_data)
+    print(table.table)
+    country=int(input("choose country of car: "))
+    print (f"You have chosen {countries[country]}")
+    if country==1:
+        usa()
+    elif country==2:
+        uk()
+
+main()
