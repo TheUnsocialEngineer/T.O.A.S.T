@@ -9,3 +9,6 @@ on first startup virginity.py is ran to get api keys and other credentials for c
 list modules using list
 
 modules are selected using start {module_name}
+
+
+modules/unscan is not finished but my .gitignore is refusing to exclude it so just ignore that
