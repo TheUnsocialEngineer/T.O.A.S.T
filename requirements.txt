@@ -3,3 +3,5 @@ terminaltables
 imgurpython
 phonenumbers
 instaloader
+requests
+bs4
