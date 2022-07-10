@@ -1,11 +1,11 @@
-{   
-    "serpaikey": "",
+{
     "imgurclientid": "c6928ac951325d5",
     "imgursecret": "089d4ffca6914ca824fa4931d2e6e5935901752f",
-    "instauser": "jordan.lecock",
     "instapass": "Fs0ci3ty!!!111!!!1",
-    "modules": "6",
+    "instauser": "jordan.lecock",
+    "modules": "7",
     "name": "TOAST",
-    "setup": "False",
+    "serpaikey": "",
+    "setup": true,
     "version": "1.3"
 }

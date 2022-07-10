@@ -1,4 +1,6 @@
+import webbrowser
 from terminaltables import AsciiTable
+import urllib
 commandlist=['list','start','auto','update']
 
 def list():
@@ -43,5 +45,7 @@ def handle(commands):
             if module=='only4dorks':
                 import modules.only4dorks.main as main
                 main
+            if module=='pimeyes':
+                webbrowser.open("https://www.pimeyes.com/")
     else:
         print(f"\rnot a command")

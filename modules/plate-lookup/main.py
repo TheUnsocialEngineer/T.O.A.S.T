@@ -1,10 +1,9 @@
 from terminaltables import AsciiTable
 import requests
 from bs4 import BeautifulSoup
-import re
 from termcolor import colored
-from pprint import pprint
-
+import urllib
+import webbrowser
 
 def usa():
     plate=input("enter plate number: ")
@@ -93,7 +92,9 @@ def uk():
         print(f"{symbol} Type Approval Date: {type_approval_date}")
         print(f"{symbol} Wheel Plan: {wheel_plan}")
 
-
+def india():
+    print("this is the best site for RTO lookups but since it uses a captcha best i can do is open the page for ya")
+    webbrowser.open("https://vahaninfos.com/vehicle-details-by-number-plate")
     
 def main():
     print((("""
@@ -117,12 +118,14 @@ def main():
     countries={
         1:"USA",
         2:"UK",
+        3:"India",
     }
 
     table_data = [
                 ['', 'Country',''],
                 ['', '1:USA',''],
                 ['', '2:UK',''],
+                ['', '3:India',''],
                 ]
     table = AsciiTable(table_data)
     print(table.table)
@@ -132,5 +135,7 @@ def main():
         usa()
     elif country==2:
         uk()
+    elif country==3:
+        india()
 
 main()
