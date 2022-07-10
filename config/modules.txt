@@ -3,5 +3,5 @@ instastalker
 only4dorks
 phonelooker
 unscan
-plate-lookup
+PlateUp
 pimeyes
