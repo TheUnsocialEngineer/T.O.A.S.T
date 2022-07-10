@@ -3,6 +3,7 @@ from instaloader import Post, Profile
 import json
 from termcolor import colored
 from terminaltables import AsciiTable
+import os
 
 L = instaloader.Instaloader()
 with open('config/config.json','r+') as f:
@@ -43,6 +44,9 @@ I::::::::In::::n    n::::n s:::::::::::ss          tt:::::::::::tt a::::::::::aa
 IIIIIIIIIInnnnnn    nnnnnn  sssssssssss              ttttttttttt    aaaaaaaaaa  aaaa SSSSSSSSSSSSSSS         ttttttttttt    aaaaaaaaaa  aaaallllllllkkkkkkkk    kkkkkkk                                                                                                                                                                                                                                          
 """)
 
+existing=os.path.exists('loot/InstaStalk/')
+if not existing:
+    os.makedirs('loot/InstaStalk/')
 
 target=input("Enter the username of the target: ")
 profile = Profile.from_username(L.context, target)
@@ -63,16 +67,18 @@ option=input("choose an option to begin: ")
 if option=="1":
   print("Downloading posts...")
   try:
+    os.chdir("loot/InstaStalk/")
     for post in profile.get_posts():
       L.download_post(post, target=profile.username)
     print(colored("Download complete!","green"))
   except Exception as e:
     print(colored("Download failed!","red"))
     print(e)
-
+  os.chdir('..')
 elif option=="2":
   print("Downloading stories...")
   try:
+    os.chdir("loot/InstaStalk/")
     userid= L.check_profile_id(target)
     for story in L.get_stories():
       # story is a Story object
@@ -82,22 +88,31 @@ elif option=="2":
   except Exception as e:
     print(colored("Download failed!","red"))
     print(e)
+  os.chdir('..')
 
 elif option=="3":
   print("Getting followers...")
   try:
+    existing=os.path.exists(f"loot/InstaStalk/{profile.username}")
+    if not existing:
+      os.makedirs(f"loot/InstaStalk/{profile.username}")
     for follower in profile.get_followers():
       print(follower.username)
-      with open (f'loot/{profile.username}/followers.txt','a') as f:
+      os.chdir
+      with open (f'loot/InstaStalk/{profile.username}/followers.txt','a') as f:
         f.write(follower.username+'\n')
     print(colored("Process complete!","green"))
   except Exception as e:
     print(colored("Process failed!","red"))
     print(e)
+  os.chdir('..')
 
 elif option=="4":
   print("Getting following...")
   try:
+    existing=os.path.exists(f"loot/InstaStalk/{profile.username}")
+    if not existing:
+      os.makedirs(f"loot/InstaStalk/{profile.username}")
     for following in profile.get_followees():
       print(following.username)
       with open (f'loot/{profile.username}/following.txt','a') as f:
@@ -106,3 +121,4 @@ elif option=="4":
   except Exception as e:
     print(colored("Process failed!","red"))
     print(e)
+  os.chdir('..')
