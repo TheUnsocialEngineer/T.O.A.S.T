@@ -47,5 +47,8 @@ def handle(commands):
                 main
             if module=='pimeyes':
                 webbrowser.open("https://www.pimeyes.com/")
+            if module=='PlateUp':
+                import modules.PlateUp.main as main
+                main
     else:
         print(f"\rnot a command")
