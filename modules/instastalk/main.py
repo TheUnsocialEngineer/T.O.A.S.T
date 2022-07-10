@@ -3,7 +3,6 @@ from instaloader import Post, Profile
 import json
 from termcolor import colored
 from terminaltables import AsciiTable
-import urllib
 
 L = instaloader.Instaloader()
 with open('config/config.json','r+') as f:
@@ -17,10 +16,10 @@ try:
   print("Login successful!")
 except Exception as e:
   print(colored(e,"red"))
-  if str(e).startswith("Login: Checkpoint required. Point your browser to"):
-    split=str(e).split(" ")
-    url=split[7]
-    urllib.urlopen(url)
+  # if str(e).startswith("Login: Checkpoint required. Point your browser to"):
+  #   split=str(e).split(" ")
+  #   url=split[7]
+  #   urllib.urlopen(url)
   exit()
 
 options=['Download Posts','Download Stories','Get Followers','Get Following']
@@ -66,9 +65,9 @@ if option=="1":
   try:
     for post in profile.get_posts():
       L.download_post(post, target=profile.username)
-    print("Download complete!")
+    print(colored("Download complete!","green"))
   except Exception as e:
-    print("Download failed!")
+    print(colored("Download failed!","red"))
     print(e)
 
 elif option=="2":
@@ -80,7 +79,30 @@ elif option=="2":
       for item in story.get_items():
           # item is a StoryItem object
           L.download_stories(userids=[userid])
-    print("Download complete!")
   except Exception as e:
-    print("Download failed!")
+    print(colored("Download failed!","red"))
+    print(e)
+
+elif option=="3":
+  print("Getting followers...")
+  try:
+    for follower in profile.get_followers():
+      print(follower.username)
+      with open (f'loot/{profile.username}/followers.txt','a') as f:
+        f.write(follower.username+'\n')
+    print(colored("Process complete!","green"))
+  except Exception as e:
+    print(colored("Process failed!","red"))
+    print(e)
+
+elif option=="4":
+  print("Getting following...")
+  try:
+    for following in profile.get_followees():
+      print(following.username)
+      with open (f'loot/{profile.username}/following.txt','a') as f:
+        f.write(following.username+'\n')
+      print(colored("Process complete!","green"))
+  except Exception as e:
+    print(colored("Process failed!","red"))
     print(e)
