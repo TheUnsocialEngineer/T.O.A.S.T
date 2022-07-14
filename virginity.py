@@ -16,16 +16,20 @@ def configure():
     with open('config/config.json','w') as f:
         json.dump(config,f,indent=4,sort_keys=True)
 
+    #youtube api key
+    youtubeapikey=input(colored("Enter your youtube api key (leave blank to configure later): ","blue"))
+    config['youtubeapikey']=youtubeapikey
+    with open('config/config.json','w') as f:
+        json.dump(config,f,indent=4,sort_keys=True)
+
     #imgurclientid
     imgurclientid=input(colored("Enter your imgur client id (leave blank to configure later): ","blue"))
-    imgurclientidcur=config['imgurclientid']
     config['imgurclientid']=imgurclientid
     with open('config/config.json','w') as f:
         json.dump(config,f,indent=4,sort_keys=True)
 
     #imgursecret
     imgursecret=input(colored("Enter your imgur secret key (leave blank to configure later): ","blue"))
-    imgursecretcur=config['imgursecret']
     config['imgursecret']=imgursecret
     with open('config/config.json','w') as f:
         json.dump(config,f,indent=4,sort_keys=True)

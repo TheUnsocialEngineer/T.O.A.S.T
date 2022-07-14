@@ -3,3 +3,5 @@ __pycache__/
 config/configmain.json
 modules\unscan
 loot
+modules/EXIFViewer
+modules/IPWhois

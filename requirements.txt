@@ -5,3 +5,5 @@ phonenumbers
 instaloader
 requests
 bs4
+pillow
+ffmpeg-python

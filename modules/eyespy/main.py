@@ -14,7 +14,7 @@ with open('config/config.json','r+') as f:
 client = ImgurClient(client_id, client_secret)
 
 print(f"""\r
-                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⢀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -74,18 +74,24 @@ if option=="f":
     
 else:
     if option=="u":
-        url=input("url: ")
-        print(" ")
-        url=f"https://serpapi.com/search?engine=google_reverse_image&image_url={url}&api_key={key}"
-        r=requests.get(url)
-        jsn=r.json()
-        jsn=json.dumps(jsn,sort_keys=True, indent=4)
-        jsn=json.loads(jsn)
-        for num in jsn:
-            key=jsn[num]
-            try:
-                symbol=termcolor.colored("[+]",color="green")
-                print (f"{symbol}image found at: {key[0]['link']})")
+        while True:
+            url=input("url: ")
+            if url.startswith("https://") or url.startswith("http://"):
                 print(" ")
-            except:
-                pass
+                url=f"https://serpapi.com/search?engine=google_reverse_image&image_url={url}&api_key={key}"
+                r=requests.get(url)
+                jsn=r.json()
+                jsn=json.dumps(jsn,sort_keys=True, indent=4)
+                jsn=json.loads(jsn)
+                for num in jsn:
+                    key=jsn[num]
+                    try:
+                        symbol=termcolor.colored("[+]",color="green")
+                        print (f"{symbol}image found at: {key[0]['link']})")
+                        print(" ")
+                    except:
+                        pass
+            else:
+                print("error not a valid url")
+                continue
+            break

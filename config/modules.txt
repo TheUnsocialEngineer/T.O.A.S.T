@@ -1,7 +1,6 @@
 eyespy
-instastalker
+InstaStalk
 only4dorks
 phonelooker
-unscan
 PlateUp
 pimeyes

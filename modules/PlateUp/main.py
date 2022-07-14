@@ -58,7 +58,6 @@ def uk():
             print(colored("an error has occured.","red"))
         symbol=f"[{colored('+', 'green')}]"
         print("plate data found")
-        endstr=""""""
         model_varient=cells[1].text
         model_description=cells[3].text
         primary_colour=cells[5].text
@@ -129,13 +128,17 @@ def main():
                 ]
     table = AsciiTable(table_data)
     print(table.table)
-    country=int(input("choose country of car: "))
+    while True:
+        country=int(input("choose country of car: "))
+        if country==1:
+            usa()
+        elif country==2:
+            uk()
+        elif country==3:
+            india()
+        else:
+            print("invalid input")
+            continue
+        break
     print (f"You have chosen {countries[country]}")
-    if country==1:
-        usa()
-    elif country==2:
-        uk()
-    elif country==3:
-        india()
-
 main()
