@@ -10,9 +10,6 @@ list modules using list
 
 modules are selected using start {module_name}
 
-
-modules/unscan is not finished but my .gitignore is refusing to exclude it so just ignore that
-
 ![image](https://user-images.githubusercontent.com/96296891/178144065-0803e6ad-eae4-46cb-94ed-cfed822a7eca.png)
 
 ![image](https://user-images.githubusercontent.com/96296891/178143776-1c4e3779-b328-47df-846a-93b15d231e20.png)
