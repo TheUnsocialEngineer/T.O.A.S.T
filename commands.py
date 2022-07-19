@@ -30,9 +30,6 @@ def handle(commands):
             except:
                 pass
             print(f"starting {module}")
-            if module=='unscan':
-                import modules.unscan.main as unscan
-                unscan.main()
             if module=='instastalk':
                 import modules.InstaStalk.main as main
                 main(username=target)
@@ -49,6 +46,9 @@ def handle(commands):
                 webbrowser.open("https://www.pimeyes.com/")
             if module=='PlateUp':
                 import modules.PlateUp.main as main
+                main
+            if module=='exifviewer':
+                import modules.EXIFViewer.main as main
                 main
     else:
         print(f"\rnot a command")

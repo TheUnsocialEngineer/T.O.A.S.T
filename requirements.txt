@@ -1,3 +1,4 @@
+dnspython
 termcolor
 terminaltables
 imgurpython
@@ -7,3 +8,4 @@ requests
 bs4
 pillow
 ffmpeg-python
+ipwhois
